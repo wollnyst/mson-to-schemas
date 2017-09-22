@@ -22,14 +22,14 @@
                     "rel",
                     "href"
                 ],
-                "description": "Identifies a link between an ALPS element and some other (possibly external) resource.\n\n"
+                "description": "Identifies a link between an ALPS element and some other (possibly external) resource."
             },
             "description": "Links to other related resources."
         },
         "descriptors": {
             "type": "array",
             "items": {
-                "description": "Defines the semantics of specific data elements or state transitions that MAY exist in an associated representation.\n\n"
+                "description": "Defines the semantics of specific data elements or state transitions that MAY exist in an associated representation."
             },
             "description": "Data and transition definitions."
         },

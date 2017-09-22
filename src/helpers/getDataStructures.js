@@ -1,11 +1,16 @@
-export default function getDataStructures(result) {
-    while (
-            !result.meta ||
-            !result.meta.classes ||
-            !result.meta.classes.includes('dataStructures')
-    ) {
-        result = result.content[0];
+function findDataStructures(result) {
+    if (!result.meta || !result.meta.classes || !result.meta.classes.includes('dataStructures')) {
+        if (Array.isArray(result.content)) {
+            return result.content.map(it => findDataStructures(it)).filter(it => Boolean(it))[0];
+        }
+
+        return null;
     }
 
-    return result.content.map(entry => entry.content[0]);
+    return result;
+}
+
+
+export default function getDataStructures(result) {
+    return findDataStructures(result).content.map(entry => entry.content[0]);
 }
